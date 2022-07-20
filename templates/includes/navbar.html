@@ -31,7 +31,7 @@
             </li>
             <li>
               <a href="#" class="nav-link">
-                <i class="fa fa-phone"></i> Llamanos</a
+                <i class="fa fa-phone"></i> Call Us</a
               >
             </li>
           </ul>
@@ -58,10 +58,10 @@
                 class="btn btn-primary dropdown-toggle"
                 data-toggle="dropdown"
               >
-                <i class="fa fa-bars"></i> Categorias
+                <i class="fa fa-bars"></i> Categories
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'store' %}">Todos</a>
+                <a class="dropdown-item" href="{% url 'store' %}">All</a>
                 {% for category in links %}
                 <a class="dropdown-item" href="{{ category.get_url }}">{{category.category_name}}</a>
                 {% endfor %}
@@ -73,7 +73,7 @@
           <a
             href="{% url 'store' %}"
             class="btn btn-outline-primary"
-            >Tienda</a
+            >Store</a
           >
           <div class="col-lg col-md-6 col-sm-12 col">
             <form action="#" class="search">
@@ -98,18 +98,18 @@
           <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
             <div class="d-flex justify-content-end mb-3 mb-lg-0">
               <div class="widget-header">
-                <small class="title text-muted">Bienvenido visitante!</small>
+                <small class="title text-muted">Welcome!</small>
                 <div>
                   <a href="./signin.html">Login</a>
                   <span class="dark-transp"> | </span>
                   <a href="./register.html"> Registrar</a>
                 </div>
               </div>
-              <a href="./cart.html" class="widget-header pl-3 ml-3">
+              <a href="/cart" class="widget-header pl-3 ml-3">
                 <div class="icon icon-sm rounded-circle border">
                   <i class="fa fa-shopping-cart"></i>
                 </div>
-                <span class="badge badge-pill badge-danger notify">0</span>
+                <span class="badge badge-pill badge-danger notify">{{ cart_count }}</span>
               </a>
             </div>
             <!-- widgets-wrap.// -->
