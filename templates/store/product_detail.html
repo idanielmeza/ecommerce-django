@@ -54,24 +54,24 @@
               </div>
               <!-- row.// -->
               <hr />
-              {% if product.stock > 0 %} {% if in_cart %}
-              <a href="{% url 'add_cart' product.id %}" class="btn btn-success">
-                <span class="text">Add back to cart</span>
-              </a>
-              <a href="/cart" class="btn btn-primary">
-                <span class="text">Show Cart</span>
-                <i class="fas fa-shopping-cart"></i>
-              </a>
+              {% if product.stock > 0 and in_cart %}
+                <a href="{% url 'add_cart' product.id %}" class="btn btn-success">
+                  <span class="text">Add back to cart</span>
+                </a>
+                <a href="/cart" class="btn btn-primary">
+                  <span class="text">Show Cart</span>
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+              {% elif product.stock > 0 %}
+                <button type="subtmit"  class="btn btn-primary">
+                  <span class="text">Add to shopping cart</span>
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
               {% else %}
-              <button type="subtmit"  class="btn btn-primary">
-                <span class="text">Add to shopping cart</span>
-                <i class="fas fa-shopping-cart"></i>
-              </button>
-              {% endif %} {% else %}
-              <a href="./product-detail.html" class="btn btn-light">
-                <span class="text">Producto Agotado</span>
-                <i class="fas fa-shopping-cart"></i>
-              </a>
+                <a href="./product-detail.html" class="btn btn-light">
+                  <span class="text">Producto Agotado</span>
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
               {% endif %}
             </article>
           </form>
